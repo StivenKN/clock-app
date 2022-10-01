@@ -30,22 +30,26 @@ const time = () => {
 	}
 
 	if (hour >= 6 && hour <= 10) {
-		$mainBg.style.background = "url('../imgs/morning-bedroom.jpg')";
-		$mainBg.style.backgroundPositionY = 'center';
-		$mainBg.style.backgroundSize = 'cover';
+		$mainBg.classList.add('morning-bg');
+		$mainBg.classList.remove('noon-bg');
+		$mainBg.classList.remove('afternoon-bg');
+		$mainBg.classList.remove('night-bg');
 	} else if (hour >= 11 && hour <= 15) {
-        $mainBg.style.background = "url('../imgs/noon-bedroom.jpg')";
-		$mainBg.style.backgroundPositionY = 'center';
-		$mainBg.style.backgroundSize = 'cover';
-    } else if (hour >= 16 && hour <= 18) {
-        $mainBg.style.background = "url('../imgs/afternoon-bedroom.jpg')";
-		$mainBg.style.backgroundPositionY = 'center';
-		$mainBg.style.backgroundSize = 'cover';
-    } else {
-        $mainBg.style.background = "url('../imgs/night-bedroom.jpg')";
-		$mainBg.style.backgroundPositionY = 'center';
-		$mainBg.style.backgroundSize = 'cover';
-    }
+		$mainBg.classList.add('noon-bg');
+		$mainBg.classList.remove('morning-bg');
+		$mainBg.classList.remove('afternoon-bg');
+		$mainBg.classList.remove('night-bg');
+	} else if (hour >= 16 && hour <= 18) {
+		$mainBg.classList.add('afternoon-bg');
+		$mainBg.classList.remove('morning-bg');
+		$mainBg.classList.remove('noon-bg');
+		$mainBg.classList.remove('night-bg');
+	} else {
+		$mainBg.classList.add('night-bg');
+		$mainBg.classList.remove('morning-bg');
+		$mainBg.classList.remove('noon-bg');
+		$mainBg.classList.remove('afternoon-bg');
+	}
 
 	//* Convert normal time
 	if (hour > 12) {

@@ -168,6 +168,33 @@ main::before {
 	font-weight: bold;
 	gap: 0.5rem;
 }
+#session {
+	margin-left: 1rem;
+}
+
+/* !- Backgrounds -! */
+.morning-bg {
+	background: url('../imgs/morning-bedroom.jpg');
+	background-position-y: center;
+	background-size: cover;
+}
+.noon-bg{
+	background: url('../imgs/noon-bedroom.jpg');
+	background-position-y: center;
+	background-size: cover;
+}
+.afternoon-bg{
+	background: url('../imgs/afternoon-bedroom.jpg');
+	background-position-y: center;
+	background-size: cover;
+}
+.night-bg {
+	background: url('../imgs/night-bedroom.jpg');
+	background-position-y: center;
+	background-size: cover;
+}
+
+/* !- Medias -! */
 @media screen and (max-width: 500px) {
 	.clock {
 		font-size: 3rem;
@@ -178,9 +205,7 @@ main::before {
 		font-size: 2rem;
 	}
 }
-#session {
-	margin-left: 1rem;
-}
+
 
 /* *---- Footer ----* */
 footer {
