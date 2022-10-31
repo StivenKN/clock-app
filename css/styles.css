@@ -2,12 +2,12 @@
 /* !- Text font -! */
 @font-face {
 	font-family: Montserrat;
-	src: url(../fonts/Montserrat-Regular.ttf);
+	src: url(../assets/fonts/Montserrat-Regular.ttf);
 }
 /* !- Clock font -! */
 @font-face {
 	font-family: Clock;
-	src: url(../fonts/alarm\ clock.ttf);
+	src: url(../assets/fonts/alarm\ clock.ttf);
 }
 
 /* *---- KeyFrames ----* */
