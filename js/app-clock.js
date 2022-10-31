@@ -1,32 +1,30 @@
 //? Definicion
-const $hours = document.querySelector('#hours');
-const $minutes = document.querySelector('#minutes');
-const $seconds = document.querySelector('#seconds');
-const $menuBarSvg = document.querySelector('#nav-bar');
+const $hours = document.querySelector('#hours')
+const $minutes = document.querySelector('#minutes')
+const $seconds = document.querySelector('#seconds')
+const $loader = document.querySelector('#loader')
 
 //! Functions
-//* Nav bar
-const NavBar = () => {
-	const $nav = document.querySelector('nav');
-	$nav.classList.toggle('active-height');
-	$nav.classList.toggle('hide-height');
-};
 
 //* Clock
 const time = () => {
 	//* Date
-	let dateTime = new Date();
-	let hour = dateTime.getHours();
-	let minute = String(dateTime.getMinutes()).padStart(2, '0');
-	let second = String(dateTime.getSeconds()).padStart(2, '0');
-	let $session = document.querySelector('#session');
-	let $mainBg = document.querySelector('main');
+	let dateTime = new Date()
+	let hour = dateTime.getHours()
+	let minute = String(dateTime.getMinutes()).padStart(2, '0')
+	let second = String(dateTime.getSeconds()).padStart(2, '0')
+	let $mainBg = document.querySelector('main')
+	let $session = document.querySelector('#session')
+
+	$hours.textContent = hour
+	$minutes.textContent = minute
+	$seconds.textContent = second
 
 	//* Validate if its am or pm
 	if (hour >= 12) {
-		$session.textContent = 'PM';
+		$session.textContent = 'PM'
 	} else {
-		$session.textContent = 'AM';
+		$session.textContent = 'AM'
 	}
 
 	if (hour >= 6 && hour <= 10) {
@@ -53,19 +51,20 @@ const time = () => {
 
 	//* Convert normal time
 	if (hour > 12) {
-		hour = hour - 12;
+		hour = hour - 12
 	}
 
 	//* Show date
-	$hours.textContent = hour;
-	$minutes.textContent = minute;
-	$seconds.textContent = second;
-
 	//* Interval each second
-	setInterval(time, 1000);
-};
-time();
+	setInterval(time, 1000)
+}
+time()
+
+const loader = () => {
+	$loader.style.display = 'none'
+	console.log('Loaded!')
+}
 
 //! Listeners
 //* Nav bar
-$menuBarSvg.addEventListener('click', NavBar);
+window.addEventListener('load', loader())
